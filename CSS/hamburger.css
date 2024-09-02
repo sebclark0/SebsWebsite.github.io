@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*   {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body    {
+    font: 1rem "ubunutu-bold", sans-serif;
+    overflow-x: hidden;
+    background-color: navy;
+    color: #cdc;
+}
+
+.title  {
+    color: #cdc;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    position:fixed;
+    top: 36px;
+    left: 60px;
+    
+
+
+}
+
+.toggle_menu    {
+    display: block;
+    position: relative;
+
+    top: 50px;
+    left: 50px;
+
+}
+
+.toggle_menu input[type="checkbox"] {
+    display: block;
+    width: 40px;
+    height: 32px;
+
+    position: absolute;
+    top: -5px;
+    left: -7px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+}
+
+.toggle_menu span{
+    display: block;
+    height:4px;
+    width: 33px;
+    background-color: #cdc;
+
+    margin: 5px;
+    border-radius: 5px;
+
+    position: relative;
+    z-index: 1;
+
+}
+
+.toggle_menu input:checked ~ span   {
+    opacity: 1;
+    transform: rotate(45deg);
+    background-color: grey;
+    bottom: 3px;
+    transition: transform 1s;
+
+
+}
+
+.toggle_menu input:checked ~ span:nth-child(3)  {
+    opacity: 0;
+}
+
+.toggle_menu input:checked ~ span:nth-child(2)  {
+    transform: rotate(-45deg);
+    right: -1px;
+    bottom: -15px;
+}
+
+.menu_links {
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    margin: -100px, 0, 0, -50px;
+    padding: 20px 25px 50px;
+
+    background-color: blue;
+    list-style: none;
+
+    transform: translate(-120%, 0);
+    transition: transform 1s;
+}
+
+.toggle_menu input:checked ~ ol {
+    transform:none;
+}
